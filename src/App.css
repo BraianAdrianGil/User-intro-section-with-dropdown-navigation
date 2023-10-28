@@ -1,0 +1,175 @@
+.App {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  width: 100%;
+  top: 0;
+  position: sticky;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.458);
+  background: var(--almost-white);
+}
+
+.main__hero__img__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__hero__img__container img {
+  max-width: 100%;
+}
+
+.main__content__general__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.main__content__general__container h1 {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.main__content__general__container p {
+  text-align: center;
+  color: var(--medium-gray);
+  font-size: 14px;
+  line-height: 20px;
+  max-width: 300px;
+}
+
+.main__button__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.main__button__container button {
+  background: var(--almost-black);
+  color: var(--almost-white);
+  font-weight: 700;
+  width: 110px;
+  height: 40px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+}
+
+.main__brands__general__container {
+  width: 100%;
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.brand__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: 100%;
+  max-width: 25%;
+  min-height: 46px;
+  max-height: 46px;
+}
+
+.brand__container img {
+  max-width: 100%;
+}
+
+footer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer__div__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.footer__div__container a {
+  margin-left: 0.25rem;
+  color: rgba(19, 19, 239, 0.562);
+  font-weight: 700;
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main__hero__img__container img {
+    height: 500px;
+    object-fit: cover;
+  }
+
+  .main__content__general__container {
+    display: grid;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    justify-items: flex-start;
+    height: 500px;
+    gap: 0;
+  }
+
+  .main__button__container {
+    justify-content: flex-start;
+    align-self: flex-start;
+  }
+
+  .main__brands__general__container {
+    width: 100%;
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    align-self: flex-end;
+  }
+
+  .main__content__general__container h1 {
+    font-size: 44px;
+    max-width: 400px;
+    text-align: left;
+    align-self: flex-end;
+  }
+
+  .main__content__general__container p {
+    max-width: 330px;
+    text-align: left;
+  }
+
+  .brand__container {
+    align-items: flex-end;
+  }
+
+  .brand__container img {
+    max-height: 24px;
+    min-height: 24px;
+    max-width: 94px;
+    min-width: 94px;
+    object-fit: contain;
+  }
+}

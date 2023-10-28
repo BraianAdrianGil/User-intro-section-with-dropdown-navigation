@@ -1,0 +1,391 @@
+.nav__general__container {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.nav__general__container a {
+  font-size: 1.6rem;
+  color: var(--almost-black);
+  font-weight: 700;
+}
+
+.nav__general__container > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: var(--almost-white);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.nav__general__container button img {
+  max-width: 100%;
+  width: 22px;
+  height: 15px;
+  background: var(--almost-white);
+}
+
+.menu__backdrop__container {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.377);
+  backdrop-filter: brightness(75%);
+  opacity: 0;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.menu__backdrop__container.active {
+  transform: translateX(-100%);
+  opacity: 1;
+  z-index: 2;
+}
+
+.menu__general__container {
+  height: 100%;
+  min-height: 100vh;
+  background: var(--almost-white);
+  position: absolute;
+  padding: 15px;
+  width: 75%;
+  top: 0;
+  right: -100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s;
+  overflow: scroll;
+}
+.menu__general__container.active {
+  transform: translateX(-133%);
+  transition: 0.5s;
+}
+
+.menu__general__container > button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  top: 0;
+  right: 0;
+  border: none;
+  cursor: pointer;
+  background: var(--almost-white);
+}
+
+.menu__general__container button img {
+  max-width: 100%;
+  height: 100%;
+}
+
+.menu__item {
+  position: relative;
+  width: 100%;
+  padding: 5px;
+}
+
+.menu__item a {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: var(--medium-gray);
+  font-weight: 400;
+  z-index: 1;
+  position: relative;
+  transition: 0.5s;
+}
+
+.menu__item a span {
+  margin-left: 0.25rem;
+}
+
+.menu__item .menu__ul {
+  z-index: 0;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  height: 0;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.menu__item .menu__ul.visible {
+  margin-left: 2rem;
+  margin-top: 1rem;
+  opacity: 1;
+  height: 140px;
+  transition: 0.5s;
+}
+
+.menu__ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  color: var(--medium-gray);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.menu__ul ul li div {
+  max-width: 16px;
+  min-width: 16px;
+}
+
+.menu__general__container > a {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px;
+  height: 42px;
+  color: var(--medium-gray);
+  font-weight: 400;
+  font-size: 16px;
+  transition: 0.5s;
+}
+
+.menu__buttons {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.login__button {
+  color: var(--medium-gray);
+  font-weight: 700;
+  width: 100%;
+  max-width: 250px;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: var(--almost-white);
+  transition: 0.5s;
+}
+
+.register__button {
+  color: var(--medium-gray);
+  font-weight: 700;
+  width: 100%;
+  max-width: 250px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--medium-gray);
+  cursor: pointer;
+  background: var(--almost-white);
+  transition: 0.5s;
+}
+
+/* Hovers================ */
+
+.menu__general__container > a:hover {
+  transition: 0.5s;
+  color: var(--almost-black);
+}
+
+.menu__item a:hover {
+  color: var(--almost-black);
+  transition: 0.5s;
+}
+
+.menu__ul li:hover {
+  color: var(--almost-black);
+  transition: 0.5s;
+}
+
+.login__button:hover {
+  color: var(--almost-black);
+  transition: 0.5s;
+}
+
+.register__button:hover {
+  color: var(--almost-white);
+  background: var(--almost-black);
+  transition: 0.5s;
+}
+
+/* MEDIA QUERIES======================== */
+
+@media screen and (min-width: 1024px) {
+  .nav__general__container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    padding: 10px 10px 10px 10px;
+  }
+
+  .nav__general__container a {
+    font-size: 1.8rem;
+  }
+
+  .nav__general__container > button {
+    display: none;
+  }
+
+  .menu__backdrop__container {
+    width: 100%;
+    margin-left: 2rem;
+    display: flex;
+    position: static;
+    top: 0;
+    right: 0;
+    height: 100%;
+    min-height: unset;
+    background: rgba(0, 0, 0, 0.377);
+    backdrop-filter: brightness(75%);
+    opacity: 1;
+    transition: 0.5s;
+    overflow: visible;
+  }
+
+  .menu__backdrop__container.active {
+    transform: unset;
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .menu__general__container {
+    height: 100%;
+    min-height: inherit;
+    background: var(--almost-white);
+    position: static;
+    padding: 0;
+    width: 100%;
+    top: unset;
+    right: unset;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    transition: 0.5s;
+    overflow: visible;
+  }
+  .menu__general__container.active {
+    transform: unset;
+  }
+
+  .menu__general__container > button {
+    display: none;
+  }
+  .menu__general__container > a {
+    padding: 0;
+    width: unset;
+    font-size: 14px;
+  }
+
+  .menu__buttons {
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+    width: 75%;
+  }
+
+  .login__button {
+    height: 30px;
+    width: 120px;
+  }
+
+  .register__button {
+    height: 30px;
+    width: 120px;
+  }
+
+  .menu__item {
+    width: 200px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu__item a {
+    font-size: 14px;
+  }
+
+  .menu__item .menu__ul {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 2.43rem;
+    right: -4%;
+    width: 100%;
+    width: 142px;
+    z-index: 5;
+    margin-top: 0;
+    opacity: 0;
+    overflow: hidden;
+    height: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .menu__item .menu__ul.visible {
+    box-shadow: 6px 8px 12px black;
+    background: var(--almost-white);
+    margin-left: 0;
+    margin-top: 0;
+    opacity: 1;
+    height: 200px;
+    transition: 0.5s;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .menu__ul li {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu__ul li span {
+    max-width: 75%;
+    width: 65%;
+  }
+
+  .menu__ul li div {
+    width: 25%;
+    max-width: 25%;
+  }
+
+  .menu__ul li div img {
+    min-width: 16px;
+    max-width: 16px;
+    min-height: 16px;
+    max-height: 16px;
+  }
+
+  .menu__ul ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .menu__item .menu__ul a {
+    padding: 0;
+  }
+}
